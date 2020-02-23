@@ -1,5 +1,9 @@
+# Native library imports
 import requests
 import json
+
+# Custom module imports
+from app.DepopClient import DepopClient
 
 '''
 Think about the task we want this to do.

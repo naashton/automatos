@@ -7,9 +7,9 @@ What are all of the various things that can be automated?
 Python 3.8
 
 ##### Linux
-\t`source venv\Scripts\activate`
+`source venv\Scripts\activate`
 
 ##### Windows
-\t`venv\Scripts\activate`
+`venv\Scripts\activate`
 
 `python main.py`
