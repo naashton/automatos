@@ -5,11 +5,11 @@ Client for connecting to and performing operations against Depop
 
 Depop does not have an open API, but their REST endpoints are exposed (for the time being)
 '''
-class DepopClient
+class DepopClient:
     base_url = 'https://webapi.depop.com/api/v1/'
     def __init__(self, shop_id):
         self.shop_id = shop_id
-        self.file = 'inventory_' + self.shop_id + '.csv''
+        self.file = 'inventory_' + self.shop_id + '.csv'
         self.products = []
     
     '''
@@ -19,6 +19,7 @@ class DepopClient
         endpoint = 'shop/' + self.shop_id + '/products?limit=' + item_count
         data = self._build_request('get', endpoint)
         self.products = data
+        print(data)
         return data
     
     '''
@@ -26,7 +27,8 @@ class DepopClient
     '''
     def write_csv(self):
 
-        with open(self.file, 'w') as f:
+        # with open(self.file, 'w') as f:
+        return
 
     # Private
     
@@ -42,8 +44,4 @@ class DepopClient
         if method == 'get':
             req = requests.get(url)
             data = json.loads(req.content)
-        elif method == 'post':
-            # Perform a post request
-        else:
-            # TODO: For now, we are likely only dealing with get requests for Depop
         return data

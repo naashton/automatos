@@ -36,5 +36,5 @@ class Popget:
 
 
 if __name__ == '__main__':
-    pop = WG_Popget('6969590')
+    pop = Popget('6969590')
     pop.main()
