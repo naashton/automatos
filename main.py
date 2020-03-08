@@ -11,7 +11,7 @@ Grab all of the products.
 Iterate over the products.
 Grab the item url, to further query that item for additional information not retrieved from the 'shop' endpoint
 '''
-class Popget:
+class App:
     base_url = 'https://webapi.depop.com/api/v1/shop'
     products = []
 
@@ -31,10 +31,18 @@ class Popget:
 
         for item in products:
             print(item)
+            for key, val in item.items():
+                print(key, ':\t', val, '\n')
 
         return
 
+    def depop(self):
+        dep = DepopClient('6969590')
+        dep.get_products(100)
+        dep.format_products_for_import()
+        dep.write_csv()
 
 if __name__ == '__main__':
-    pop = Popget('6969590')
-    pop.main()
+    pop = App('6969590')
+    # pop.main()
+    pop.depop()
